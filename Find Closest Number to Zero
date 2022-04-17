@@ -1,0 +1,45 @@
+/* package codechef; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		ArrayList<Integer> arrList = new ArrayList<Integer>();
+		arrList.add(-2);
+		arrList.add(15);
+		arrList.add(10);
+		arrList.add(3);
+		arrList.add(0);
+		arrList.add(8);
+		ArrayList<Integer> positive = new ArrayList<Integer>();
+		ArrayList<Integer> negative = new ArrayList<Integer>();
+		for(int i=0; i<arrList.size(); i++) {
+		    if(arrList.get(i) < 0) {
+		        negative.add(arrList.get(i));
+		    }
+		    if(arrList.get(i) >= 0) {
+		        positive.add(arrList.get(i));
+		    }
+		}
+		int min = Collections.min(positive);
+		int max = Collections.max(negative);
+		int max_mod = max * -1;
+		if(min == 0 || max == 0) {
+		    System.out.println("Element with least distance to zero : 0");
+		}
+		else if(min == max_mod) {
+		    System.out.println("Element with least distance to zero : " + min);
+		}
+		else if(min > max_mod) {
+		    System.out.println("Element with least distance to zero : " + max);
+		}
+		else {
+		    System.out.println("Element with least distance to zero : " + min);
+		}
+	}
+}
