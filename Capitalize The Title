@@ -1,0 +1,28 @@
+class Solution {
+    public String capitalizeTitle(String title) {
+        //Scanner sc = new Scanner(System.in);
+		//String title = sc.nextLine();
+		ArrayList<String> result = new ArrayList<String>();
+        String ans = "";
+		String[] splitString = title.split(" ");
+		for(int i=0; i<splitString.length; i++) {
+		    if(splitString[i].length() <= 2) {
+		        String twoOrLess = splitString[i].toLowerCase();
+		        result.add(twoOrLess);
+		    }    
+		    else {
+		        String first = splitString[i].substring(0, 1);
+		        String firstCap = first.toUpperCase();
+		        String rest = splitString[i].substring(1, splitString[i].length());
+		        String restSmall = rest.toLowerCase();
+		        String partResult = firstCap + restSmall;
+		        result.add(partResult);
+		    }
+		}
+		for(int i=0; i<result.size()-1; i++) {
+		    ans += result.get(i) + " ";
+		}
+        ans += result.get(result.size()-1);
+        return ans;
+    }
+}
